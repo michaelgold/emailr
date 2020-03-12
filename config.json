@@ -1,7 +1,8 @@
 {
-    "password":"b6d60e8e9f5d588b8f207649df86bf5e-ee13fadb-345c85ad",
-    "server": "smtp.mailgun.org",
+    "username": "",
+    "password": "",
+    "server": "smtp.sendgrid.net",
     "port": "587",
-    "sender": "gold@nyu.edu",
-    "recipient": "gold@nyu.edu"
+    "sender": "",
+    "recipient": ""
 }
