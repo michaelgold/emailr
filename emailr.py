@@ -22,7 +22,7 @@ server.starttls()
 
 server.login(config['username'], config['password'])
 
-ip = '/sbin/ifconfig'
+ip = '`which ifconfig`'
 
 myCmd = os.popen(ip).read() 
 
