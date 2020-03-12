@@ -8,6 +8,8 @@ from email.mime.text import MIMEText
 
 from RepeatedTimer import RepeatedTimer
 
+from datetime import datetime
+
 
 with open('config.json', 'r') as f:
     config = json.load(f)
@@ -23,7 +25,13 @@ ip = 'ifconfig'
 
 myCmd = os.popen('ifconfig').read() 
 
-server.sendmail("gold@nyu.edu", "gold@nyu.edu", ''.join(e for e in myCmd if e.isalnum() or e.isspace() or e is '.'))
+timestamp = datetime.now().strftime("%m/%d/%y")
+subject = "ifconfig for {}".format(timestamp)
+messageText = ''.join(e for e in myCmd if e.isalnum() or e.isspace() or e is '.')
+
+message = 'Subject: {}\n\n{}'.format(subject, messageText)
+
+server.sendmail(config['sender'], config['recipient'], message )
 
 
  

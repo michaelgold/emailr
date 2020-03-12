@@ -1,6 +1,7 @@
 {
-    "username":"mgdl@holojamvr.com",
-    "password":"fe0179138d3cbe0c6b4f63f1dc081f73-ee13fadb-f65e2e67",
+    "password":"b6d60e8e9f5d588b8f207649df86bf5e-ee13fadb-345c85ad",
     "server": "smtp.mailgun.org",
-    "port": "587"
+    "port": "587",
+    "sender": "gold@nyu.edu",
+    "recipient": "gold@nyu.edu"
 }
