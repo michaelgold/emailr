@@ -1,6 +1,8 @@
 import json
 
 import smtplib
+import os
+
 from time import sleep
 
 from email.mime.multipart import MIMEMultipart
@@ -11,7 +13,7 @@ from RepeatedTimer import RepeatedTimer
 from datetime import datetime
 
 
-with open('config.json', 'r') as f:
+with open(os.path.dirname(os.path.realpath(__file__)) + '/config.json', 'r') as f:
     config = json.load(f)
     print(config)
 
@@ -20,10 +22,9 @@ server.starttls()
 
 server.login(config['username'], config['password'])
 
-import os
-ip = 'ifconfig'
+ip = '/sbin/ifconfig'
 
-myCmd = os.popen('ifconfig').read() 
+myCmd = os.popen(ip).read() 
 
 timestamp = datetime.now().strftime("%m/%d/%y")
 subject = "ifconfig for {}".format(timestamp)
